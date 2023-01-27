@@ -6,9 +6,9 @@ A React app with quizes based on data retrieved from Open Trivia Database (`http
 
 ## Tech stack
 
--   React (Create React App)
--   TypeScript
--   Bootstrap
--   SASS
--   Axios API
+-   React v18.0.27 (Create React App)
+-   TypeScript v4.9.4
+-   Bootstrap v5.2.3
+-   SASS v1.57.1
+-   Axios v1.2.5 
 -   Open Trivia Database API
