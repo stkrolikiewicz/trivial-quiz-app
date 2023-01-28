@@ -1,11 +1,13 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./styles/App.sass";
+import React, { useEffect } from "react";
+import "./styles/_app.sass";
+import { Header, Main, Footer } from "./components";
 
 function App() {
     return (
         <>
-            <h1 className="center">Trivial Quiz App</h1>
+            <Header />
+            <Main />
+            <Footer />
         </>
     );
 }
