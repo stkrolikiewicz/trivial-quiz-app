@@ -1,2 +1,2 @@
 export { default as HomePage } from "./HomePage/HomePage";
-export { default as Question } from "./Question/Question";
+export { default as QuizPage } from "./QuizPage/QuizPage";

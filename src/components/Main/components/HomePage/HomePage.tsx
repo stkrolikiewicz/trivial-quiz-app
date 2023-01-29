@@ -11,7 +11,7 @@ const HomePage = () => {
                         className="btn btn-secondary"
                         onClick={() => navigate("/question")}
                     >
-                        Get Question
+                        Start a quiz!
                     </button>
                 </div>
             </div>
