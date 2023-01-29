@@ -52,6 +52,8 @@ const QuizPage = () => {
                     {categoriesLoading && <p>Loading...</p>}
                     {categories.length > 0 && (
                         <form onSubmit={handleSubmit}>
+                            <label htmlFor="category">Select category:</label>
+                            <br />
                             <select
                                 value={category}
                                 onChange={(e) => setCategory(e.target.value)}
@@ -64,6 +66,7 @@ const QuizPage = () => {
                                     );
                                 })}
                             </select>
+                            <br />
                             <button type="submit" className="btn btn-primary">
                                 Start quiz!
                             </button>

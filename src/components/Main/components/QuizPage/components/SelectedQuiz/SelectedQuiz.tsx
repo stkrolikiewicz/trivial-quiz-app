@@ -30,15 +30,23 @@ const SelectedQuiz = () => {
                 <div className="col-12">
                     <button
                         className="btn btn-secondary"
+                        onClick={() => navigate("/")}
+                    >
+                        Back to home
+                    </button>
+                    <button
+                        className="btn btn-secondary"
                         onClick={() => navigate("/quiz")}
                     >
-                        Chose another category
+                        Chose another quiz
                     </button>
                 </div>
             </div>
             <div className="row">
                 <div className="col-12">
-                    {quiz.length && <h2>Category: {quiz[0].category}</h2>}
+                    {!loading && quiz.length && (
+                        <h2>Category: {quiz[0].category}</h2>
+                    )}
                 </div>
                 <div className="col-12">
                     {loading && <p>Loading...</p>}
