@@ -7,9 +7,12 @@ const Main = () => {
     return (
         <main className={styles.main}>
             <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/quiz" element={<QuizPage />} />
-                <Route path="quiz/:category" element={<SelectedQuiz />} />
+                <Route path="/trivial-quiz-app/" element={<HomePage />} />
+                <Route path="/trivial-quiz-app/quiz" element={<QuizPage />} />
+                <Route
+                    path="/trivial-quiz-app/quiz/:category"
+                    element={<SelectedQuiz />}
+                />
             </Routes>
         </main>
     );

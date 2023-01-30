@@ -7,8 +7,7 @@ const Footer = () => {
                 <div className="row">
                     <div className="col-12">
                         <p>
-                            <span className="trivial">Trivial</span> Quiz App ©
-                            2023
+                            <span className="trivial">Trivial</span> Quiz © 2023
                         </p>
                     </div>
                 </div>

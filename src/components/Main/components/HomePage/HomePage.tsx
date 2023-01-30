@@ -9,7 +9,7 @@ const HomePage = () => {
                 <div className="col-12">
                     <button
                         className="btn btn-home"
-                        onClick={() => navigate("/quiz")}
+                        onClick={() => navigate("/trivial-quiz-app/quiz")}
                         text-size="lg"
                     >
                         Start a quiz!

@@ -32,7 +32,7 @@ const QuizPage = () => {
         e.preventDefault();
         console.log("Submit");
         console.log(category);
-        navigate(`/quiz/${category}`);
+        navigate(`/trivial-quiz-app/quiz/${category}`);
     };
 
     return (
