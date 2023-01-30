@@ -4,7 +4,7 @@
 
 A React app with quizes based on data retrieved from Open Trivia Database (`https://opentdb.com/`).
 
-Visit deployed app on  `https://stkrolikiewicz.github.io/trivial-quiz-app/`
+Visit deployed app on  [https://stkrolikiewicz.github.io/trivial-quiz-app/]
 
 ## Tech stack
 
