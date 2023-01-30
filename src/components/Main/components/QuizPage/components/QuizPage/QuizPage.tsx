@@ -39,34 +39,40 @@ const QuizPage = () => {
         <div className="container-fluid">
             <div className="row">
                 <div className="col-12">
-                    <button
-                        className="btn btn-secondary"
-                        onClick={() => navigate("/")}
-                    >
-                        Back to home
-                    </button>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-12">
-                    {categoriesLoading && <p>Loading...</p>}
+                    {categoriesLoading && (
+                        <div
+                            className="spinner-grow text-primary"
+                            role="status"
+                        ></div>
+                    )}
                     {categories.length > 0 && (
-                        <form onSubmit={handleSubmit}>
-                            <label htmlFor="category">Select category:</label>
-                            <br />
-                            <select
-                                value={category}
-                                onChange={(e) => setCategory(e.target.value)}
-                            >
-                                {categories.map((category, index) => {
-                                    return (
-                                        <option key={index} value={category.id}>
-                                            {category.name}
-                                        </option>
-                                    );
-                                })}
-                            </select>
-                            <br />
+                        <form onSubmit={handleSubmit} className="card p-3">
+                            <div className="mb-3">
+                                <label
+                                    htmlFor="category"
+                                    className="form-label"
+                                >
+                                    Select category:
+                                </label>
+                                <select
+                                    value={category}
+                                    onChange={(e) =>
+                                        setCategory(e.target.value)
+                                    }
+                                    className="form-select"
+                                >
+                                    {categories.map((category, index) => {
+                                        return (
+                                            <option
+                                                key={index}
+                                                value={category.id}
+                                            >
+                                                {category.name}
+                                            </option>
+                                        );
+                                    })}
+                                </select>
+                            </div>
                             <button type="submit" className="btn btn-primary">
                                 Start quiz!
                             </button>

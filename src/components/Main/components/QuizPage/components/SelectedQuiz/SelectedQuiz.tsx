@@ -26,31 +26,22 @@ const SelectedQuiz = () => {
     };
     return (
         <div className="container-fluid">
-            <div className="row">
-                <div className="col-12">
-                    <button
-                        className="btn btn-secondary"
-                        onClick={() => navigate("/")}
-                    >
-                        Back to home
-                    </button>
-                    <button
-                        className="btn btn-secondary"
-                        onClick={() => navigate("/quiz")}
-                    >
-                        Chose another quiz
-                    </button>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-12">
+            <div className="row m-3">
+                <div className="col-12 mb-3">
                     {!loading && quiz.length && (
-                        <h2>Category: {quiz[0].category}</h2>
+                        <h2 className="category">
+                            Category: <em>{quiz[0].category}</em>
+                        </h2>
                     )}
                 </div>
                 <div className="col-12">
-                    {loading && <p>Loading...</p>}
-                    {quiz.length && <Quiz quiz={quiz} />}
+                    {loading && (
+                        <div
+                            className="spinner-grow text-primary"
+                            role="status"
+                        ></div>
+                    )}
+                    {quiz.length > 0 && <Quiz quiz={quiz} />}
                 </div>
             </div>
         </div>

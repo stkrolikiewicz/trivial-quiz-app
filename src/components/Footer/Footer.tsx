@@ -6,7 +6,10 @@ const Footer = () => {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-12">
-                        <p>Footer</p>
+                        <p>
+                            <span className="trivial">Trivial</span> Quiz App ©
+                            2023
+                        </p>
                     </div>
                 </div>
             </div>

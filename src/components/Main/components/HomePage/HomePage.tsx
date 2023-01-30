@@ -8,8 +8,9 @@ const HomePage = () => {
             <div className="row">
                 <div className="col-12">
                     <button
-                        className="btn btn-secondary"
+                        className="btn btn-home"
                         onClick={() => navigate("/quiz")}
+                        text-size="lg"
                     >
                         Start a quiz!
                     </button>

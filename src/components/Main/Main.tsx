@@ -4,7 +4,6 @@ import { Routes, Route, useParams } from "react-router-dom";
 import { HomePage, QuizPage, SelectedQuiz } from "./components";
 
 const Main = () => {
-    const { category } = useParams();
     return (
         <main className={styles.main}>
             <Routes>

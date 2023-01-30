@@ -1,8 +1,164 @@
 @import "../../node_modules/bootstrap/scss/bootstrap"
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
 
-$bg-dark: #212225
-$light: #f8f9fa
+$dark: #21071D
+$secondary: #54124A
+$primary: #8a377db2
+$light: #FDF7FA
+$green-crayola: #0dab76
+$green-pigment:#13a346
+$light-salmone: #ffaf87
+$middle-blue-purple: #acb2f1
+$red: #ee6363
+$border-color:  #3d2139//#67598b//#7D7D8C
+$card-header-color: $border-color
+$card-body-color: #ece2e2
+$submit-color: #FF9D47 
+$active-color: #ec5f00
+$trivial:  linear-gradient(90deg, rgba(255, 190, 11,1) 0%, rgba(251, 86, 7, 1) 20%,rgba(255, 0, 110, 1) 40%, rgba(131, 56, 236,1) 60%, rgba(58, 134, 255,1) 80%, rgba(19, 163, 70, 1) 100%)
 
-body
-    background-color: $bg-dark
+.body
+    background-color: $dark
     color: $light
+    font-family: 'Lora', serif
+    display: flex
+    flex-direction: column
+    min-height: 100vh
+
+header
+    background: $secondary
+    border-bottom: 0.5px solid $border-color
+
+main
+    background: $dark
+    flex-grow: 1
+    display: flex
+    flex-direction: column
+    .container-fluid
+        flex-grow: 1
+        // background-color: $light-salmone
+        display: flex
+        flex-direction: column
+        justify-content: center
+        .row
+            // background: $green-crayola
+            .col-12
+                display: flex
+                align-items: center
+                justify-content: center
+
+footer
+    background: $secondary
+    border-top: 0.5px solid $border-color
+    margin-top: auto
+
+button, .btn
+    font-family: 'Rubik', sans-serif
+
+.card
+    background: $primary
+    border: 1px solid $border-color
+    &-header
+        // background: $card-header-color
+        color: $light
+
+.card.question
+    background: $card-body-color
+    label, p, legend, h4, h6
+        color: black
+
+.category
+    color: $light
+    font-weight: 400
+    em
+        font-weight: 600
+
+.question
+    background: $light
+
+.trivial
+    font-width: 700
+    background: $trivial
+    background-clip: text
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+
+.btn-primary
+    background:$submit-color
+    color: $dark
+    border-color: $submit-color
+    &:hover
+        background: $submit-color
+        color: $dark
+        border-color: $submit-color
+        opacity: 0.8
+
+.btn-outline-primary
+    background: transparent
+    color: $submit-color
+    border-color: $submit-color
+    &:hover
+        background: $submit-color
+        border-color: $submit-color
+        color: $dark
+
+.btn-home
+    background: $trivial
+    color: $light
+    font-weight: 600 
+    padding: 20px
+    font-size: 24px
+    position: relative
+    border: 5px solid $light
+    z-index: 10
+    transition: 0.4s ease-in
+    &::after
+        position: absolute
+        content: ""
+        color: $dark
+        left: 0
+        bottom: 0
+        width: 100%
+        height: 100%
+        border-radius: 1px
+        background: $dark
+        z-index: -1
+        transition: 0.4s
+
+.answer 
+    padding-inline: 10px
+    margin-left: 10px
+    border-left: 3px solid $border-color
+
+.not-correct
+    background: $red
+    color: $light
+    padding: 2px 10px
+    border-radius: 5px
+    border: 1px solid $light-salmone
+
+.correct
+    background: $green-pigment
+    color: $light
+    padding-inline: 10px
+    border-radius: 5px
+    border-color: $green-crayola
+
+.myAlert
+    background: rgba(0, 0, 0, 0.8)
+    backdrop-filter: blur(5px)
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    z-index: 100
+    .alert
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        h4
+            text-align: center
+        button.btn-dark
+            margin-right: 10px
