@@ -125,7 +125,7 @@ button, .btn
         z-index: -1
         transition: 0.4s
 
-.answer 
+.answer
     padding-inline: 10px
     margin-left: 10px
     border-left: 3px solid $border-color
@@ -160,5 +160,24 @@ button, .btn
         transform: translate(-50%, -50%)
         h4
             text-align: center
-        button.btn-dark
+        .btn-dark
             margin-right: 10px
+        @media screen and (max-width: 900px)
+            button
+                margin: 0 auto
+                display: block
+                justify-content: center
+            .btn-dark
+                margin-bottom: 10px
+                margin-inline: auto
+
+.form-check
+    // display: flex
+    // align-items: center
+    label
+        width: 100%
+        margin-block: auto
+        &:hover
+            cursor: pointer
+            background-color: $middle-blue-purple
+            border-radius: 3px

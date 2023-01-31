@@ -4,10 +4,21 @@ import { useNavigate } from "react-router-dom";
 import Question from "../../../../../../../../types/question.type";
 
 const Quiz = (props: any) => {
-    const [answers, setAnswers] = useState<string[]>([]);
+    const [answers, setAnswers] = useState<string[]>([
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+    ]);
     const [submitted, setSubmitted] = useState(false);
     const [score, setScore] = useState(0);
-    const [showAnswears, setShowAnswears] = useState(false);
+    const [showAnswers, setShowAnswers] = useState(false);
     const [alert, setAlert] = useState(false);
 
     const navigate = useNavigate();
@@ -18,8 +29,21 @@ const Quiz = (props: any) => {
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
-        setSubmitted(true);
+        if (answers.includes("")) {
+            setAlert(true);
+        } else {
+            setSubmitted(true);
+            console.log(answers);
+            console.log(correctAnswers);
+            checkAnswers();
+            console.log("Submit");
+        }
+    };
+
+    const handleHardSubmit = (e: any) => {
+        e.preventDefault();
         setAlert(false);
+        setSubmitted(true);
         console.log(answers);
         console.log(correctAnswers);
         checkAnswers();
@@ -34,10 +58,6 @@ const Quiz = (props: any) => {
             }
         });
         setScore(score);
-    };
-    const showAlert = (e: any) => {
-        e.preventDefault();
-        setAlert(true);
     };
 
     return (
@@ -54,7 +74,7 @@ const Quiz = (props: any) => {
                         </button>
                         <button
                             className="btn btn-outline-secondary"
-                            onClick={handleSubmit}
+                            onClick={handleHardSubmit}
                         >
                             I understand, submit
                         </button>
@@ -64,12 +84,7 @@ const Quiz = (props: any) => {
             <div className="row">
                 <div className="col-12">
                     {!submitted && (
-                        <form
-                            onSubmit={
-                                answers.length < 10 ? showAlert : handleSubmit
-                            }
-                            className="card p-3"
-                        >
+                        <form onSubmit={handleSubmit} className="card p-3">
                             {props.quiz.map((question: any, index: number) => (
                                 <fieldset
                                     key={index}
@@ -81,6 +96,8 @@ const Quiz = (props: any) => {
                                         const newAnswers = answers;
                                         newAnswers[index] = target.value;
                                         setAnswers(newAnswers);
+                                        console.log(answers);
+                                        console.log();
                                     }}
                                     className="card mb-3 question"
                                 >
@@ -89,26 +106,27 @@ const Quiz = (props: any) => {
                                     </legend>
                                     <div className="m-3">
                                         {question.answers.map(
-                                            (
-                                                answear: string,
-                                                index: number
-                                            ) => (
+                                            (answer: string, index: number) => (
                                                 <div
-                                                    key={answear}
-                                                    className="form-check mt-1"
+                                                    key={answer}
+                                                    className="form-check my-1"
                                                 >
-                                                    <input
-                                                        id={`answear${index}`}
-                                                        type="radio"
-                                                        value={answear}
-                                                        name={question.question}
-                                                        className="form-check-input"
-                                                    />
                                                     <label
-                                                        htmlFor={`answear${index}`}
-                                                        className="form-label"
+                                                        htmlFor={`answer${index}${question.question}`}
+                                                        className="form-label py-1"
                                                     >
-                                                        {answear}
+                                                        <input
+                                                            id={`answer${index}${question.question}`}
+                                                            type="radio"
+                                                            value={answer}
+                                                            name={
+                                                                question.question
+                                                            }
+                                                            className="form-check-input"
+                                                        />
+                                                        <span className="px-2">
+                                                            {answer}
+                                                        </span>
                                                     </label>
                                                 </div>
                                             )
@@ -130,14 +148,12 @@ const Quiz = (props: any) => {
                             <button
                                 className="btn btn-primary mt-3"
                                 onClick={() => {
-                                    setShowAnswears(!showAnswears);
+                                    setShowAnswers(!showAnswers);
                                 }}
                             >
-                                {!showAnswears
-                                    ? "Show answears"
-                                    : "Hide answears"}
+                                {!showAnswers ? "Show answers" : "Hide answers"}
                             </button>
-                            {showAnswears && (
+                            {showAnswers && (
                                 <div>
                                     {props.quiz.map(
                                         (qeustion: any, index: number) => (
@@ -157,7 +173,7 @@ const Quiz = (props: any) => {
                                                         </p>
 
                                                         <p className="answer">
-                                                            Correct answear:{" "}
+                                                            Correct answer:{" "}
                                                             {
                                                                 qeustion.correct_answer
                                                             }
@@ -186,8 +202,9 @@ const Quiz = (props: any) => {
                             )}
                             <button
                                 className="btn btn-outline-primary mt-3"
-                                onClick={() => navigate("/quiz")}
-                                text-size="lg"
+                                onClick={() =>
+                                    navigate("/trivial-quiz-app/quiz")
+                                }
                             >
                                 Start new quiz!
                             </button>
