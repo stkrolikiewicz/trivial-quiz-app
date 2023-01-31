@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
 );
 root.render(
-    <BrowserRouter>
+    <BrowserRouter basename="/trivial-quiz-app">
         {/* <React.StrictMode> */}
         <App />
         {/* </React.StrictMode> */}

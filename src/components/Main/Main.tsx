@@ -1,18 +1,13 @@
-import React from "react";
-import styles from "./Main.module.sass";
-import { Routes, Route, useParams } from "react-router-dom";
-import { HomePage, QuizPage, SelectedQuiz } from "./components";
+import { Routes, Route } from "react-router-dom";
+import { HomePage, QuizPage, CategoriesPage } from "./components";
 
 const Main = () => {
     return (
-        <main className={styles.main}>
+        <main>
             <Routes>
-                <Route path="/trivial-quiz-app/" element={<HomePage />} />
-                <Route path="/trivial-quiz-app/quiz" element={<QuizPage />} />
-                <Route
-                    path="/trivial-quiz-app/quiz/:category"
-                    element={<SelectedQuiz />}
-                />
+                <Route path="/" element={<HomePage />} />
+                <Route path="/quiz" element={<QuizPage />} />
+                <Route path="/quiz/:category" element={<CategoriesPage />} />
             </Routes>
         </main>
     );

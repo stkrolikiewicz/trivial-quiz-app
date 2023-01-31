@@ -1,21 +1,19 @@
-import React from "react";
-import styles from "./Header.module.sass";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const Header = () => {
     const navigate = useNavigate();
     const location = useLocation();
     return (
-        <header className={styles.header}>
+        <header>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
                     <h1>
                         <span className="trivial">Trivial</span> Quiz
                     </h1>
-                    {location.pathname !== "/trivial-quiz-app/" && (
+                    {location.pathname !== "/" && (
                         <button
                             className="nav-item btn btn-primary"
-                            onClick={() => navigate("/trivial-quiz-app/")}
+                            onClick={() => navigate("/")}
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
