@@ -73,7 +73,7 @@ const Quiz = (props: any) => {
                             I want to select all answers
                         </button>
                         <button
-                            className="btn btn-outline-secondary"
+                            className="btn btn-outline-light text-dark"
                             onClick={handleHardSubmit}
                         >
                             I understand, submit
@@ -85,55 +85,65 @@ const Quiz = (props: any) => {
                 <div className="col-12">
                     {!submitted && (
                         <form onSubmit={handleSubmit} className="card p-3">
-                            {props.quiz.map((question: any, index: number) => (
-                                <fieldset
-                                    key={index}
-                                    id={index.toString()}
-                                    onChange={(e) => {
-                                        const target =
-                                            e.target as HTMLInputElement;
-                                        console.log(target.value);
-                                        const newAnswers = answers;
-                                        newAnswers[index] = target.value;
-                                        setAnswers(newAnswers);
-                                        console.log(answers);
-                                        console.log();
-                                    }}
-                                    className="card mb-3 question"
-                                >
-                                    <legend className="card-header">
-                                        {question.question}
-                                    </legend>
-                                    <div className="m-3">
-                                        {question.answers.map(
-                                            (answer: string, index: number) => (
-                                                <div
-                                                    key={answer}
-                                                    className="form-check my-1"
-                                                >
-                                                    <label
-                                                        htmlFor={`answer${index}${question.question}`}
-                                                        className="form-label py-1"
-                                                    >
-                                                        <input
-                                                            id={`answer${index}${question.question}`}
-                                                            type="radio"
-                                                            value={answer}
-                                                            name={
-                                                                question.question
-                                                            }
-                                                            className="form-check-input"
-                                                        />
-                                                        <span className="px-2">
-                                                            {answer}
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                            )
-                                        )}
-                                    </div>
-                                </fieldset>
-                            ))}
+                            <div>
+                                {props.quiz.map(
+                                    (question: any, index: number) => (
+                                        <fieldset
+                                            key={index}
+                                            id={index.toString()}
+                                            onChange={(e) => {
+                                                const target =
+                                                    e.target as HTMLInputElement;
+                                                console.log(target.value);
+                                                const newAnswers = answers;
+                                                newAnswers[index] =
+                                                    target.value;
+                                                setAnswers(newAnswers);
+                                                console.log(answers);
+                                                console.log();
+                                            }}
+                                            className="card mb-3 question"
+                                        >
+                                            <legend className="card-header">
+                                                {question.question}
+                                            </legend>
+                                            <div className="m-3">
+                                                {question.answers.map(
+                                                    (
+                                                        answer: string,
+                                                        index: number
+                                                    ) => (
+                                                        <div
+                                                            key={answer}
+                                                            className="form-check my-1"
+                                                        >
+                                                            <label
+                                                                htmlFor={`answer${index}${question.question}`}
+                                                                className="form-label py-1"
+                                                            >
+                                                                <input
+                                                                    id={`answer${index}${question.question}`}
+                                                                    type="radio"
+                                                                    value={
+                                                                        answer
+                                                                    }
+                                                                    name={
+                                                                        question.question
+                                                                    }
+                                                                    className="form-check-input"
+                                                                />
+                                                                <span className="px-2">
+                                                                    {answer}
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    )
+                                                )}
+                                            </div>
+                                        </fieldset>
+                                    )
+                                )}
+                            </div>
                             <button type="submit" className="btn btn-primary">
                                 Submit
                             </button>
@@ -141,12 +151,16 @@ const Quiz = (props: any) => {
                     )}
                     {submitted && (
                         <div className="card p-3">
-                            <div>
+                            <div className="score mb-2">
                                 <h2>Quiz finished</h2>
-                                <h4>Score: {score}/10</h4>
+                                <h4 className="mt-2">
+                                    <span className="badge rounded-pill text-bg-light px-3">
+                                        Score: {score}/10
+                                    </span>
+                                </h4>
                             </div>
                             <button
-                                className="btn btn-primary mt-3"
+                                className="btn btn-outline-primary"
                                 onClick={() => {
                                     setShowAnswers(!showAnswers);
                                 }}
@@ -201,7 +215,7 @@ const Quiz = (props: any) => {
                                 </div>
                             )}
                             <button
-                                className="btn btn-outline-primary mt-3"
+                                className="btn btn-primary mt-3"
                                 onClick={() =>
                                     navigate("/trivial-quiz-app/quiz")
                                 }
