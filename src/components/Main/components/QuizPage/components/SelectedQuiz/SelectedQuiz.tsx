@@ -26,15 +26,15 @@ const SelectedQuiz = () => {
     };
     return (
         <div className="container-fluid">
-            <div className="row m-3">
-                <div className="col-12 mb-3">
+            <div className="row mx-lg-3  my-3 mx-sm-0">
+                <div className="col-12 mb-3 mx-sm-0">
                     {!loading && quiz.length && (
                         <h2 className="category">
                             Category: <em>{quiz[0].category}</em>
                         </h2>
                     )}
                 </div>
-                <div className="col-12">
+                <div className="col-12 mx-sm-0">
                     {loading && (
                         <div
                             className="spinner-grow text-primary"
