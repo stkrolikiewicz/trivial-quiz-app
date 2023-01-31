@@ -103,10 +103,10 @@ const Quiz = (props: any) => {
                                             }}
                                             className="card mb-3 question"
                                         >
-                                            <legend className="card-header">
+                                            <h4 className="card-header">
                                                 {question.question}
-                                            </legend>
-                                            <div className="m-3">
+                                            </h4>
+                                            <div className="card-body">
                                                 {question.answers.map(
                                                     (
                                                         answer: string,

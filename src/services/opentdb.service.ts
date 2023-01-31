@@ -39,6 +39,7 @@ export async function getQuiz(category: string): Promise<Question[]> {
             ].sort((a, b) => 0.5 - Math.random()),
         };
     });
+    console.log(response.data);
     console.log(quiz);
     return quiz;
 }
@@ -46,6 +47,7 @@ export async function getQuiz(category: string): Promise<Question[]> {
 export async function getCategories(): Promise<Category[]> {
     const response = await axios.get(`https://opentdb.com/api_category.php`);
     const categories = response.data.trivia_categories;
+    console.log(response);
     console.log(categories);
     return categories;
 }
