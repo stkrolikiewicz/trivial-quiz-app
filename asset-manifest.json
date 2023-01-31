@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/trivial-quiz-app/static/css/main.ced031d0.css",
-    "main.js": "/trivial-quiz-app/static/js/main.99b8fc8d.js",
+    "main.js": "/trivial-quiz-app/static/js/main.1ae170c8.js",
     "static/js/787.5fdb52d7.chunk.js": "/trivial-quiz-app/static/js/787.5fdb52d7.chunk.js",
     "index.html": "/trivial-quiz-app/index.html",
     "main.ced031d0.css.map": "/trivial-quiz-app/static/css/main.ced031d0.css.map",
-    "main.99b8fc8d.js.map": "/trivial-quiz-app/static/js/main.99b8fc8d.js.map",
+    "main.1ae170c8.js.map": "/trivial-quiz-app/static/js/main.1ae170c8.js.map",
     "787.5fdb52d7.chunk.js.map": "/trivial-quiz-app/static/js/787.5fdb52d7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ced031d0.css",
-    "static/js/main.99b8fc8d.js"
+    "static/js/main.1ae170c8.js"
   ]
 }
