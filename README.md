@@ -10,11 +10,11 @@ Visit deployed app on  [https://stkrolikiewicz.github.io/trivial-quiz-app/]
 
 To run this project:
 
-  1. Install all packages:
+1. Install all packages:
   ```
   $ npm install
   ```
-  1. Run the app locally:
+2. Run the app locally:
   ```
   $ npm start
   ```
