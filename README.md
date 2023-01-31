@@ -6,6 +6,19 @@ A React app with quizes based on data retrieved from Open Trivia Database (`http
 
 Visit deployed app on  [https://stkrolikiewicz.github.io/trivial-quiz-app/]
 
+## Run
+
+To run this project:
+
+  1. Install all packages:
+  ```
+  $ npm install
+  ```
+  1. Run the app locally:
+  ```
+  $ npm start
+  ```
+
 ## Tech stack
 
 -   React v18.0.27 (Create React App)
