@@ -1,22 +1,6 @@
+@import "./_variables"
 @import "../../node_modules/bootstrap/scss/bootstrap"
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
-
-$dark: #21071D
-$secondary: #54124A
-$primary: #8a377db2
-$light: #FDF7FA
-$green-crayola: #0dab76
-$green-pigment:#13a346
-$light-salmone: #ffaf87
-$middle-blue-purple: #acb2f1
-$red: #ee6363
-$border-color:  #3d2139//#67598b//#7D7D8C
-$card-header-color: $border-color
-$card-body-color: #ece2e2
-$submit-color: #FF9D47 
-$active-color: #ec5f00
-$trivial:  linear-gradient(90deg, rgba(255, 190, 11,1) 0%, rgba(251, 86, 7, 1) 20%,rgba(255, 0, 110, 1) 40%, rgba(131, 56, 236,1) 60%, rgba(58, 134, 255,1) 80%, rgba(19, 163, 70, 1) 100%)
-
 .body
     background-color: $dark
     color: $light
@@ -177,8 +161,6 @@ button, .btn
                 margin-inline: auto
 
 .form-check
-    // display: flex
-    // align-items: center
     label
         width: 100%
         margin-block: auto
@@ -202,8 +184,10 @@ button, .btn
 
 h2
     text-align: center
-    margin-block: 0
 
+h1, h2, h3, h4, h5, h6
+    margin-block: 0
+    
 .score
     h4
         text-align: center
