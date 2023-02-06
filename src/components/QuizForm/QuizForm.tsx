@@ -18,12 +18,9 @@ const QuizForm: React.FC<QuizFormProps> = (props) => {
             id={index.toString()}
             onChange={(e) => {
               const target = e.target as HTMLInputElement
-              console.log(target.value)
               const newAnswers = answers
               newAnswers[index] = target.value
               props.setAnswers(newAnswers)
-              console.log(answers)
-              console.log()
             }}
             className="card mb-3 question"
           >

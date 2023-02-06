@@ -23,7 +23,7 @@ const CategoriesPage: React.FC = (props) => {
         setCategoriesLoading(false)
       })
       .catch((error) => {
-        throw error
+        throw new Error(error)
       })
   }
 
