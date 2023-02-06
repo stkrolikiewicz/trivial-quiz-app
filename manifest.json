@@ -1,15 +1,15 @@
 {
-    "short_name": "Trivial Quiz",
-    "name": "Trivial Quiz © 2023",
-    "icons": [
-        {
-            "src": "logo192.png",
-            "type": "image/png",
-            "sizes": "192x192"
-        }
-    ],
-    "start_url": "/trivial-quiz-app/",
-    "display": "standalone",
-    "theme_color": "#000000",
-    "background_color": "#54124A"
+  "short_name": "Trivial Quiz",
+  "name": "Trivial Quiz © 2023",
+  "icons": [
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/trivial-quiz-app/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#54124A"
 }
