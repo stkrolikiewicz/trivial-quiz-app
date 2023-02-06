@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import './styles/_app.sass'
-import { Header, Main, Footer } from './components'
+
+import { BrowserRouter } from 'react-router-dom'
+import AppRoutes from './routes'
+
+import { Spinner } from 'react-bootstrap'
 
 const App: React.FC = () => {
   return (
-    <div className="body">
-      <Header />
-      <Main />
-      <Footer />
-    </div>
+    <BrowserRouter basename="/trivial-quiz-app">
+      <Suspense fallback={<Spinner />}>
+        <AppRoutes />
+      </Suspense>
+    </BrowserRouter>
   )
 }
 

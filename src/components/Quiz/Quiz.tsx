@@ -6,7 +6,7 @@ interface QuizProps {
   quiz: Question[]
 }
 
-const Quiz = (props: QuizProps): JSX.Element => {
+const Quiz: React.FC<QuizProps> = (props) => {
   const [answers, setAnswers] = useState<string[]>([
     '',
     '',
