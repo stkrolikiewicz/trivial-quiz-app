@@ -11,7 +11,9 @@ const NotFound: React.FC = () => {
           <h2>Oops! You seem to be lost.</h2>
           <button
             className="nav-item btn btn-primary"
-            onClick={() => { navigate('/') }}
+            onClick={() => {
+              navigate('/')
+            }}
           >
             Back to home page
           </button>

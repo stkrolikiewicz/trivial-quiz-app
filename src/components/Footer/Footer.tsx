@@ -1,8 +1,7 @@
 import React from 'react'
-import styles from './Footer.module.sass'
 const Footer: React.FC = () => {
   return (
-    <footer className={styles.footer}>
+    <footer>
       <div className="container-fluid">
         <div className="row">
           <div className="col-12">

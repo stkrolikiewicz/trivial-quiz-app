@@ -9,7 +9,9 @@ const HomePage: React.FC = () => {
         <div className="col-12">
           <button
             className="btn btn-home"
-            onClick={() => { navigate('/quiz') }}
+            onClick={() => {
+              navigate('/quiz')
+            }}
           >
             Start a quiz!
           </button>

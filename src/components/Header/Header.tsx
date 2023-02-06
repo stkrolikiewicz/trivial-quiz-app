@@ -14,7 +14,9 @@ const Header: React.FC = () => {
           {location.pathname !== '/' && (
             <button
               className="nav-item btn btn-primary"
-              onClick={() => { navigate('/') }}
+              onClick={() => {
+                navigate('/')
+              }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
