@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getQuiz } from '~/services/opentdb.service'
 import type Question from '~/types/question.type'
-import { Quiz } from '~/components'
+import { Quiz, Spinner } from '~/components'
 import RootPage from './root'
 
 const QuizPage: React.FC = () => {
@@ -40,9 +40,7 @@ const QuizPage: React.FC = () => {
             )}
           </div>
           <div className="col-12 mx-sm-0">
-            {loading && (
-              <div className="spinner-grow text-primary" role="status"></div>
-            )}
+            {loading && <Spinner />}
             {quiz.length > 0 && <Quiz quiz={quiz} />}
           </div>
         </div>

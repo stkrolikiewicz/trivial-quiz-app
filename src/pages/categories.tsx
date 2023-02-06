@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { getCategories } from '~/services/opentdb.service'
 import type Category from '~/types/category.type'
 import RootPage from './root'
+import { Spinner } from '~/components'
 
 const CategoriesPage: React.FC = (props) => {
   const navigate = useNavigate()
@@ -37,9 +38,7 @@ const CategoriesPage: React.FC = (props) => {
       <div className="container-fluid">
         <div className="row">
           <div className="col-12">
-            {categoriesLoading && (
-              <div className="spinner-grow text-primary" role="status"></div>
-            )}
+            {categoriesLoading && <Spinner />}
             {categories.length > 0 && (
               <form onSubmit={handleSubmit} className="card p-3">
                 <div className="mb-3">

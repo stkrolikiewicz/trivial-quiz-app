@@ -1,10 +1,9 @@
-import React, { lazy } from 'react'
+import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-
-const HomePage = lazy(async () => await import('~/pages/home'))
-const QuizPage = lazy(async () => await import('~/pages/quiz'))
-const CategoriesPage = lazy(async () => await import('~/pages/categories'))
-const NotFound = lazy(async () => await import('~/pages/notFound'))
+import HomePage from '~/pages/home'
+import QuizPage from '~/pages/quiz'
+import CategoriesPage from '~/pages/categories'
+import NotFound from '~/pages/notFound'
 
 const AppRoutes: React.FC = () => {
   return (
