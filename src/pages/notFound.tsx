@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import RootPage from './root'
 
-const NotFound: React.FC = (props) => {
+const NotFound: React.FC = () => {
   const navigate = useNavigate()
   return (
     <RootPage header="not-found">
@@ -26,4 +26,4 @@ const NotFound: React.FC = (props) => {
   )
 }
 
-export default NotFound
+export default React.memo(NotFound)

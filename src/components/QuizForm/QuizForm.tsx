@@ -54,4 +54,4 @@ const QuizForm: React.FC<QuizFormProps> = (props) => {
   )
 }
 
-export default QuizForm
+export default React.memo(QuizForm)

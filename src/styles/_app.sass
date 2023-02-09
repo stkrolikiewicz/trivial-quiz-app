@@ -44,6 +44,8 @@ footer
 
 button, .btn
     font-family: 'Rubik', sans-serif
+    &:hover
+        opacity: 0.8
 
 .card
     background: $primary
@@ -149,14 +151,14 @@ button, .btn
         transform: translate(-50%, -50%)
         h4
             text-align: center
-        .btn-dark
+        .btn-first
             margin-right: 10px
         @media screen and (max-width: 900px)
             button
                 margin: 0 auto
                 display: block
                 justify-content: center
-            .btn-dark
+            .btn-first
                 margin-bottom: 10px
                 margin-inline: auto
 
@@ -185,7 +187,7 @@ button, .btn
 h2
     text-align: center
 
-h1, h2, h3, h4, h5, h6
+h1, h2
     margin-block: 0
     
 .score
@@ -196,3 +198,10 @@ h1, h2, h3, h4, h5, h6
 .lost
     display: flex
     flex-direction: column
+
+
+.alert
+  justify-content: center
+  align-items: center
+  display: flex
+  flex-direction: column

@@ -11,7 +11,6 @@ interface QuizSummaryProps {
 const QuizSummary: React.FC<QuizSummaryProps> = (props) => {
   const navigate = useNavigate()
   const [showAnswers, setShowAnswers] = useState(false)
-
   return (
     <div className="card p-3">
       <div className="score mb-2">
@@ -69,4 +68,4 @@ const QuizSummary: React.FC<QuizSummaryProps> = (props) => {
   )
 }
 
-export default QuizSummary
+export default React.memo(QuizSummary)

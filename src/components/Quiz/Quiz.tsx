@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import type Question from '~/types/question.type'
 import Alert from '../Alert/Alert'
 import { answers as emptyAnswers } from '~/models/answers.model'
@@ -19,22 +19,28 @@ const Quiz: React.FC<QuizProps> = (props) => {
     return question.correct_answer
   })
 
-  const handleSubmit = (e: React.FormEvent): void => {
-    e.preventDefault()
-    if (answers.includes('')) {
-      setAlert(true)
-    } else {
+  const handleSubmit = useCallback(
+    (e: React.FormEvent): void => {
+      e.preventDefault()
+      if (answers.includes('')) {
+        setAlert(true)
+      } else {
+        setSubmitted(true)
+        checkAnswers()
+      }
+    },
+    [submitted]
+  )
+
+  const handleHardSubmit = useCallback(
+    (e: React.FormEvent): void => {
+      e.preventDefault()
+      setAlert(false)
       setSubmitted(true)
       checkAnswers()
-    }
-  }
-
-  const handleHardSubmit = (e: React.FormEvent): void => {
-    e.preventDefault()
-    setAlert(false)
-    setSubmitted(true)
-    checkAnswers()
-  }
+    },
+    [submitted, alert]
+  )
 
   const checkAnswers = (): void => {
     let score = 0
@@ -50,9 +56,12 @@ const Quiz: React.FC<QuizProps> = (props) => {
     <div className="container-fluid">
       {alert && (
         <Alert
+          theme="dark"
           message="You didn't select all answers!"
+          cancelMessage="I want to select all answers"
+          submitMessage="Submit anyway"
           setAlert={setAlert}
-          handleHardSubmit={handleHardSubmit}
+          handleSubmit={handleHardSubmit}
         />
       )}
       <div className="row">
@@ -72,4 +81,4 @@ const Quiz: React.FC<QuizProps> = (props) => {
   )
 }
 
-export default Quiz
+export default React.memo(Quiz)

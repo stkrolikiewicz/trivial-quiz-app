@@ -16,4 +16,4 @@ const RootPage: React.FC<RootPageProps> = (props) => {
   )
 }
 
-export default RootPage
+export default React.memo(RootPage)

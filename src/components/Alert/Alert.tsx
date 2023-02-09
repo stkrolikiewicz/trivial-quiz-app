@@ -1,33 +1,38 @@
 import React from 'react'
 
 interface AlertProps {
+  theme: 'success' | 'danger' | 'warning' | 'info' | 'dark' | 'light'
   message: string
+  cancelMessage?: string
+  submitMessage?: string
   setAlert: React.Dispatch<React.SetStateAction<boolean>>
-  handleHardSubmit: (e: React.FormEvent) => void
+  handleSubmit: (e: React.FormEvent) => void
 }
 
 const Alert: React.FC<AlertProps> = (props) => {
   return (
     <div className="myAlert">
-      <div className="alert alert-danger" role="alert">
+      <div className={`alert alert-${props.theme}`} role="alert">
         <h4>{props.message}</h4>
-        <button
-          className="btn btn-dark"
-          onClick={() => {
-            props.setAlert(false)
-          }}
-        >
-          I want to select all answers
-        </button>
-        <button
-          className="btn btn-outline-light text-dark"
-          onClick={props.handleHardSubmit}
-        >
-          I understand, submit
-        </button>
+        <div>
+          <button
+            className={`btn btn-first btn-${props.theme}`}
+            onClick={() => {
+              props.setAlert(false)
+            }}
+          >
+            {props.cancelMessage ?? 'Cancel'}
+          </button>
+          <button
+            className={`btn btn-outline-${props.theme}`}
+            onClick={props.handleSubmit}
+          >
+            {props.submitMessage ?? 'Submit'}
+          </button>
+        </div>
       </div>
     </div>
   )
 }
 
-export default Alert
+export default React.memo(Alert)

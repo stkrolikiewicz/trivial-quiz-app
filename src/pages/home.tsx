@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import RootPage from './root'
 
-const HomePage: React.FC = (props) => {
+const HomePage: React.FC = () => {
   const navigate = useNavigate()
   return (
     <RootPage header="home">
@@ -24,4 +24,4 @@ const HomePage: React.FC = (props) => {
   )
 }
 
-export default HomePage
+export default React.memo(HomePage)

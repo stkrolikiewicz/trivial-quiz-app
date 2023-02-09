@@ -1,55 +1,47 @@
-import React, { useEffect, useState } from 'react'
+import React, { type ChangeEvent, useCallback, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { getCategories } from '~/services/opentdb.service'
+import { Spinner } from '~/components'
 import type Category from '~/types/category.type'
 import RootPage from './root'
-import { Spinner } from '~/components'
 
-const CategoriesPage: React.FC = (props) => {
+interface CategoriesPageProps {
+  categories: Category[]
+}
+
+const CategoriesPage: React.FC<CategoriesPageProps> = ({ categories }) => {
   const navigate = useNavigate()
-  const [categories, setCategories] = useState<Category[]>([])
-  const [categoriesLoading, setCategoriesLoading] = useState(false)
   const [category, setCategory] = useState('9')
-  useEffect(() => {
-    showCategories()
-  }, [])
-
-  const showCategories = (): void => {
-    setCategoriesLoading(true)
-    getCategories()
-      .then((res) => {
-        setCategories(res)
-      })
-      .then(() => {
-        setCategoriesLoading(false)
-      })
-      .catch((error) => {
-        throw new Error(error)
-      })
-  }
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
     navigate(`/quiz/${category}`)
   }
 
+  const handleChange = useCallback(
+    (e: ChangeEvent<HTMLSelectElement>): void => {
+      setCategory(e.target.value)
+    },
+    [category]
+  )
+
   return (
     <RootPage header="quiz">
       <div className="container-fluid">
         <div className="row">
           <div className="col-12">
-            {categoriesLoading && <Spinner />}
-            {categories.length > 0 && (
-              <form onSubmit={handleSubmit} className="card p-3">
-                <div className="mb-3">
-                  <label htmlFor="category" className="form-label">
-                    Select category:
-                  </label>
+            <form onSubmit={handleSubmit} className="card p-3">
+              <div className="mb-3">
+                <label htmlFor="category" className="form-label">
+                  Select category:
+                </label>
+                {categories.length === 0 ? (
+                  <div className="container text-center">
+                    <Spinner />
+                  </div>
+                ) : (
                   <select
                     value={category}
-                    onChange={(e) => {
-                      setCategory(e.target.value)
-                    }}
+                    onChange={handleChange}
                     className="form-select"
                   >
                     {categories.map((category, index) => {
@@ -60,12 +52,12 @@ const CategoriesPage: React.FC = (props) => {
                       )
                     })}
                   </select>
-                </div>
-                <button type="submit" className="btn btn-primary">
-                  Start quiz!
-                </button>
-              </form>
-            )}
+                )}
+              </div>
+              <button type="submit" className="btn btn-primary">
+                Start quiz!
+              </button>
+            </form>
           </div>
         </div>
       </div>
@@ -73,4 +65,4 @@ const CategoriesPage: React.FC = (props) => {
   )
 }
 
-export default CategoriesPage
+export default React.memo(CategoriesPage)
