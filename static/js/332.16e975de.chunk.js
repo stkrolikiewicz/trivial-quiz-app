@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktrivial_quiz_app=self.webpackChunktrivial_quiz_app||[]).push([[332],{332:function(i,e,a){a.r(e);var n=a(791),s=a(689),c=a(471),l=a(184),r=function(){var i=(0,s.s0)();return(0,l.jsx)(c.Z,{header:"home",children:(0,l.jsx)("div",{className:"container-fluid",children:(0,l.jsx)("div",{className:"row",children:(0,l.jsx)("div",{className:"col-12",children:(0,l.jsx)("button",{className:"btn btn-home",onClick:function(){i("/quiz")},children:"Start a quiz!"})})})})})};e.default=n.memo(r)}}]);
+//# sourceMappingURL=332.16e975de.chunk.js.map
