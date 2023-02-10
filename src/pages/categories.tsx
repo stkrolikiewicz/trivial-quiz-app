@@ -29,16 +29,16 @@ const CategoriesPage: React.FC<CategoriesPageProps> = ({ categories }) => {
       <div className="container-fluid">
         <div className="row">
           <div className="col-12">
-            <form onSubmit={handleSubmit} className="card p-3">
-              <div className="mb-3">
-                <label htmlFor="category" className="form-label">
-                  Select category:
-                </label>
-                {categories.length === 0 ? (
-                  <div className="container text-center">
-                    <Spinner />
-                  </div>
-                ) : (
+            {categories.length === 0 ? (
+              <div className="container text-center">
+                <Spinner />
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="card p-3">
+                <div className="mb-3">
+                  <label htmlFor="category" className="form-label">
+                    Select category:
+                  </label>
                   <select
                     value={category}
                     onChange={handleChange}
@@ -52,12 +52,12 @@ const CategoriesPage: React.FC<CategoriesPageProps> = ({ categories }) => {
                       )
                     })}
                   </select>
-                )}
-              </div>
-              <button type="submit" className="btn btn-primary">
-                Start quiz!
-              </button>
-            </form>
+                </div>
+                <button type="submit" className="btn btn-primary">
+                  Start quiz!
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </div>
