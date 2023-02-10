@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/trivial-quiz-app/static/css/main.a20fe45c.css",
-    "main.js": "/trivial-quiz-app/static/js/main.b38f0597.js",
+    "main.css": "/trivial-quiz-app/static/css/main.3f6718ec.css",
+    "main.js": "/trivial-quiz-app/static/js/main.50ad0ddf.js",
     "static/js/332.16e975de.chunk.js": "/trivial-quiz-app/static/js/332.16e975de.chunk.js",
-    "static/js/174.b7c48baf.chunk.js": "/trivial-quiz-app/static/js/174.b7c48baf.chunk.js",
-    "static/js/241.4ee73cbe.chunk.js": "/trivial-quiz-app/static/js/241.4ee73cbe.chunk.js",
+    "static/js/174.6e4abf26.chunk.js": "/trivial-quiz-app/static/js/174.6e4abf26.chunk.js",
+    "static/js/241.c430c7fb.chunk.js": "/trivial-quiz-app/static/js/241.c430c7fb.chunk.js",
     "static/js/769.0c52e22a.chunk.js": "/trivial-quiz-app/static/js/769.0c52e22a.chunk.js",
     "static/js/787.5fdb52d7.chunk.js": "/trivial-quiz-app/static/js/787.5fdb52d7.chunk.js",
     "index.html": "/trivial-quiz-app/index.html",
-    "main.a20fe45c.css.map": "/trivial-quiz-app/static/css/main.a20fe45c.css.map",
-    "main.b38f0597.js.map": "/trivial-quiz-app/static/js/main.b38f0597.js.map",
+    "main.3f6718ec.css.map": "/trivial-quiz-app/static/css/main.3f6718ec.css.map",
+    "main.50ad0ddf.js.map": "/trivial-quiz-app/static/js/main.50ad0ddf.js.map",
     "332.16e975de.chunk.js.map": "/trivial-quiz-app/static/js/332.16e975de.chunk.js.map",
-    "174.b7c48baf.chunk.js.map": "/trivial-quiz-app/static/js/174.b7c48baf.chunk.js.map",
-    "241.4ee73cbe.chunk.js.map": "/trivial-quiz-app/static/js/241.4ee73cbe.chunk.js.map",
+    "174.6e4abf26.chunk.js.map": "/trivial-quiz-app/static/js/174.6e4abf26.chunk.js.map",
+    "241.c430c7fb.chunk.js.map": "/trivial-quiz-app/static/js/241.c430c7fb.chunk.js.map",
     "769.0c52e22a.chunk.js.map": "/trivial-quiz-app/static/js/769.0c52e22a.chunk.js.map",
     "787.5fdb52d7.chunk.js.map": "/trivial-quiz-app/static/js/787.5fdb52d7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a20fe45c.css",
-    "static/js/main.b38f0597.js"
+    "static/css/main.3f6718ec.css",
+    "static/js/main.50ad0ddf.js"
   ]
 }
