@@ -34,7 +34,10 @@ const CategoriesPage: React.FC<CategoriesPageProps> = ({ categories }) => {
                 <Spinner />
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="card p-5 border">
+              <form
+                onSubmit={handleSubmit}
+                className="card p-5 bordered categories"
+              >
                 <div className="mb-3">
                   <label htmlFor="category" className="form-label">
                     Select category:

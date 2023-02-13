@@ -27,7 +27,6 @@ const Quiz: React.FC<QuizProps> = (props) => {
       } else {
         setSubmitted(true)
         checkAnswers()
-        console.log(answers)
       }
     },
     [submitted, alert, answers]
@@ -39,7 +38,6 @@ const Quiz: React.FC<QuizProps> = (props) => {
       setAlert(false)
       setSubmitted(true)
       checkAnswers()
-      console.log(answers)
     },
     [submitted, alert]
   )

@@ -56,8 +56,6 @@ button, .btn
 .card
     background: transparent
     border: 1px solid $border-color
-    &-header
-        color: $light
 
 .card.question
     background: $card-body-color
@@ -188,6 +186,12 @@ button, .btn
                 padding: 0
                 margin-inline: 0
                 width: 100%
+        .bordered
+            border-inline: 0px
+        .card.bordered
+            border-radius: 0
+            &.categories, &.summary
+                width: 100%
 
 h2
     text-align: center
@@ -215,3 +219,6 @@ h1, h2
     backdrop-filter: blur(4px)
     border-radius: 20px
     border-width: 0
+
+.bordered
+    border: 0.5px solid $border-color

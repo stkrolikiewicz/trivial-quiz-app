@@ -12,7 +12,7 @@ const QuizSummary: React.FC<QuizSummaryProps> = (props) => {
   const navigate = useNavigate()
   const [showAnswers, setShowAnswers] = useState(false)
   return (
-    <div className="card p-5 border">
+    <div className="card p-3 p-sm-5 bordered summary">
       <div className="score mb-2">
         <h2>Quiz finished</h2>
         <h4 className="mt-2">
