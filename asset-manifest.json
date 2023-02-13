@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/trivial-quiz-app/static/css/main.e7f15584.css",
-    "main.js": "/trivial-quiz-app/static/js/main.8c9f000a.js",
+    "main.js": "/trivial-quiz-app/static/js/main.4fba2bba.js",
     "static/js/332.16e975de.chunk.js": "/trivial-quiz-app/static/js/332.16e975de.chunk.js",
     "static/js/174.6e4abf26.chunk.js": "/trivial-quiz-app/static/js/174.6e4abf26.chunk.js",
     "static/js/241.39f2de8f.chunk.js": "/trivial-quiz-app/static/js/241.39f2de8f.chunk.js",
@@ -9,7 +9,7 @@
     "static/js/787.5fdb52d7.chunk.js": "/trivial-quiz-app/static/js/787.5fdb52d7.chunk.js",
     "index.html": "/trivial-quiz-app/index.html",
     "main.e7f15584.css.map": "/trivial-quiz-app/static/css/main.e7f15584.css.map",
-    "main.8c9f000a.js.map": "/trivial-quiz-app/static/js/main.8c9f000a.js.map",
+    "main.4fba2bba.js.map": "/trivial-quiz-app/static/js/main.4fba2bba.js.map",
     "332.16e975de.chunk.js.map": "/trivial-quiz-app/static/js/332.16e975de.chunk.js.map",
     "174.6e4abf26.chunk.js.map": "/trivial-quiz-app/static/js/174.6e4abf26.chunk.js.map",
     "241.39f2de8f.chunk.js.map": "/trivial-quiz-app/static/js/241.39f2de8f.chunk.js.map",
@@ -18,6 +18,6 @@
   },
   "entrypoints": [
     "static/css/main.e7f15584.css",
-    "static/js/main.8c9f000a.js"
+    "static/js/main.4fba2bba.js"
   ]
 }
