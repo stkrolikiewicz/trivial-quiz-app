@@ -20,7 +20,7 @@ export async function getQuiz(category: string): Promise<Question[]> {
       question: decode(element.question),
       answers: [
         ...element.incorrect_answers.map((answer: string) => decode(answer)),
-        (element.correct_answer = decode(element.correct_answer)),
+        decode(element.correct_answer),
       ].sort((a, b) => 0.5 - Math.random()),
     }
   })
