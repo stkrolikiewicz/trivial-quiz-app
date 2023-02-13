@@ -12,7 +12,7 @@ interface AlertProps {
 const Alert: React.FC<AlertProps> = (props) => {
   return (
     <div className="myAlert">
-      <div className={`alert alert-${props.theme}`} role="alert">
+      <div className={`alert alert-${props.theme} border`} role="alert">
         <h4>{props.message}</h4>
         <div>
           <button

@@ -1,7 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import type Question from '~/types/question.type'
 import Alert from '../Alert/Alert'
-import { answers as emptyAnswers } from '~/models/answers.model'
 import QuizForm from '../QuizForm/QuizForm'
 import QuizSummary from '../QuizSummary/QuizSummary'
 
@@ -10,6 +9,7 @@ interface QuizProps {
 }
 
 const Quiz: React.FC<QuizProps> = (props) => {
+  const emptyAnswers: string[] = ['', '', '', '', '', '', '', '', '', '']
   const [answers, setAnswers] = useState<string[]>(emptyAnswers)
   const [submitted, setSubmitted] = useState(false)
   const [score, setScore] = useState(0)
@@ -27,9 +27,10 @@ const Quiz: React.FC<QuizProps> = (props) => {
       } else {
         setSubmitted(true)
         checkAnswers()
+        console.log(answers)
       }
     },
-    [submitted]
+    [submitted, alert, answers]
   )
 
   const handleHardSubmit = useCallback(
@@ -38,6 +39,7 @@ const Quiz: React.FC<QuizProps> = (props) => {
       setAlert(false)
       setSubmitted(true)
       checkAnswers()
+      console.log(answers)
     },
     [submitted, alert]
   )

@@ -10,8 +10,8 @@ interface QuizFormProps {
 
 const QuizForm: React.FC<QuizFormProps> = (props) => {
   return (
-    <form onSubmit={props.handleSubmit} className="card p-3">
-      <div>
+    <form onSubmit={props.handleSubmit} className="card p-5 border">
+      <div className="mb-3">
         {props.quiz.map((question: Question, index: number) => (
           <fieldset
             key={index}
@@ -22,7 +22,7 @@ const QuizForm: React.FC<QuizFormProps> = (props) => {
               newAnswers[index] = target.value
               props.setAnswers(newAnswers)
             }}
-            className="card mb-3 question"
+            className="card mb-4 question"
           >
             <h4 className="card-header">{question.question}</h4>
             <div className="card-body">

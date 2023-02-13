@@ -49,4 +49,4 @@ const QuizPage: React.FC = () => {
   )
 }
 
-export default React.memo(QuizPage)
+export default QuizPage
