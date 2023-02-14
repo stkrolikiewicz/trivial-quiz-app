@@ -13,6 +13,7 @@ const Header: React.FC = () => {
           </h1>
           {location.pathname !== '/' && (
             <button
+              id="home-button"
               className="nav-item btn btn-primary"
               onClick={() => {
                 navigate('/')

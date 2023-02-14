@@ -16,7 +16,14 @@
 header
     backdrop-filter: blur(4px)
     border-bottom: 0.5px solid $border-color
-    
+    position: sticky
+    top: 0
+    z-index: 100
+    transition: 0.5s ease-in-out
+    &.not-top
+      background: rgba(14, 1, 12, 0.9)
+      border-color: $dark
+
 main
     flex-grow: 1
     display: flex
@@ -36,7 +43,7 @@ main
 
 footer
     backdrop-filter: blur(4px)
-    // background: $secondary
+    background: rgba(103, 89, 139, 0.2)
     border-top: 0.5px solid $border-color
     margin-top: auto
     div
@@ -72,7 +79,6 @@ button, .btn
     padding: 10px 10px 0 10px
 
 .trivial
-    font-width: 700
     background: $trivial
     background-clip: text
     -webkit-background-clip: text
@@ -221,3 +227,16 @@ h1, h2
 
 .bordered
     border: 0.5px solid $border-color
+
+@media (min-width: 950px)
+  #quiz-category
+    position: sticky
+    top: 11.9px
+    z-index: 150
+    width: fit-content
+
+#quiz-container
+    justify-content: center
+
+#home-button
+    z-index: 200

@@ -31,11 +31,13 @@ const QuizPage: React.FC = () => {
   return (
     <RootPage header="quiz">
       <div className="container-fluid">
-        <div className="row mx-lg-3  my-3 mx-sm-0">
-          <div className="col-12 mb-3 mx-sm-0">
+        <div id="quiz-container" className="row mx-lg-3  my-3 mx-sm-0">
+          <div className="col-12 mb-3 mx-sm-0" id="quiz-category">
             {!loading && quiz.length > 0 && (
               <h2 className="category">
-                Category: <em>{quiz[0].category}</em>
+                <span className="em">
+                  <em>{quiz[0].category}</em>
+                </span>
               </h2>
             )}
           </div>
